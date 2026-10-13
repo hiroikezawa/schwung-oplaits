@@ -14,6 +14,7 @@ const root = process.env.SCHWUNG_ROOT || path.resolve(here, "../../schwung");
 const load = (p) => import(pathToFileURL(p).href);
 /* OB_SHARED points at another copy of shared/ -- e.g. one mirrored from the
  * device, whose page engine can differ from this checkout's. */
+if (process.env.OB_SHARED) console.log("page engine from " + process.env.OB_SHARED);
 const shared = process.env.OB_SHARED || path.join(root, "src/shared");
 const { createController } = await load(path.join(shared, "param_pages/page_controller.mjs"));
 const { decodeInput, applyInput } = await load(path.join(shared, "param_pages/page_input.mjs"));
