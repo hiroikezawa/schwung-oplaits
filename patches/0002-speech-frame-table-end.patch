@@ -1,0 +1,17 @@
+--- a/plaits/dsp/speech/lpc_speech_synth.h	2026-10-13 06:23:29.849243784 +0900
++++ b/plaits/dsp/speech/lpc_speech_synth.h	2026-10-13 06:23:29.851390053 +0900
+@@ -75,9 +75,13 @@
+     if (!interpolate) {
+       frame_fractional = 0.0f;
+     }
++    // oPlaits patch 0002: without interpolation the second frame is blended
++    // in with a weight of exactly 0, and for the last phoneme or word frame
++    // it lies one past the end of the table. Same value, without the
++    // out-of-bounds read.
+     PlayFrame(
+         frames[frame_integral],
+-        frames[frame_integral + 1],
++        frames[frame_integral + (interpolate ? 1 : 0)],
+         frame_fractional);
+   }
+ 

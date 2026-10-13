@@ -1,0 +1,17 @@
+--- a/plaits/dsp/engine2/six_op_engine.cc	2026-10-13 10:54:14.303815049 +0900
++++ b/plaits/dsp/engine2/six_op_engine.cc	2026-10-13 10:54:14.305381887 +0900
+@@ -88,7 +88,13 @@
+ }
+ 
+ void SixOpEngine::Reset() {
+-  
++  // oPlaits patch 0004: acc_buffer_ lives in the RAM every engine shares
++  // and is READ on the first block after a switch to this engine, before it
++  // is written -- so that block is mixed with whatever the previous engine
++  // left there. On the 32-bit hardware a WavetableEngine wave_map_ pointer
++  // read as a float is ~1e-34; on a 64-bit host it can be any value, NaN
++  // included. Cleared here, where the voice calls Reset() on every switch.
++  std::fill(&acc_buffer_[0], &acc_buffer_[kMaxBlockSize * kNumSixOpVoices], 0.0f);
+ }
+ 
+ void SixOpEngine::LoadUserData(const uint8_t* user_data) {

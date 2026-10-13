@@ -1,0 +1,249 @@
+/* Generated from module.json by scripts/metadata.py. Do not edit. */
+export const PARAMS = [
+ {
+  "key": "level",
+  "name": "Volume",
+  "short_name": "VOLUME",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "engine",
+  "name": "Engine",
+  "short_name": "ENGINE",
+  "type": "enum",
+  "options": [
+   "VAVCF",
+   "PHDIS",
+   "6OP1",
+   "6OP2",
+   "6OP3",
+   "WTERR",
+   "STRMC",
+   "CHIP",
+   "VA",
+   "WSHAP",
+   "FM",
+   "GRAIN",
+   "ADDIT",
+   "WTBL",
+   "CHORD",
+   "SPEAK",
+   "SWARM",
+   "NOISE",
+   "PARTI",
+   "STRNG",
+   "MODAL",
+   "KICK",
+   "SNARE",
+   "HIHAT"
+  ],
+  "default": "VA"
+ },
+ {
+  "key": "harmonics",
+  "name": "Harmonics",
+  "short_name": "HARMO",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "timbre",
+  "name": "Timbre",
+  "short_name": "TIMBRE",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "morph",
+  "name": "Morph",
+  "short_name": "MORPH",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "decay",
+  "name": "LPG Decay",
+  "short_name": "DECAY",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "colour",
+  "name": "LPG Colour",
+  "short_name": "COLOR",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0,
+  "unit": "%"
+ },
+ {
+  "key": "pitch",
+  "name": "Pitch",
+  "short_name": "PITCH",
+  "type": "int",
+  "min": 0,
+  "max": 35,
+  "step": 1,
+  "default": 14
+ },
+ {
+  "key": "fm_amt",
+  "name": "FM Amount",
+  "short_name": "FM>",
+  "type": "float",
+  "min": -1,
+  "max": 1,
+  "step": 0.01,
+  "default": 0
+ },
+ {
+  "key": "timbre_amt",
+  "name": "Timbre Amount",
+  "short_name": "TIMB>",
+  "type": "float",
+  "min": -1,
+  "max": 1,
+  "step": 0.01,
+  "default": 0
+ },
+ {
+  "key": "morph_amt",
+  "name": "Morph Amount",
+  "short_name": "MORPH>",
+  "type": "float",
+  "min": -1,
+  "max": 1,
+  "step": 0.01,
+  "default": 0
+ },
+ {
+  "key": "aux_mix",
+  "name": "Aux Mix",
+  "short_name": "AUX",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0,
+  "unit": "%"
+ },
+ {
+  "key": "coarse",
+  "name": "Coarse",
+  "short_name": "COARSE",
+  "type": "int",
+  "min": -24,
+  "max": 24,
+  "step": 1,
+  "default": 0
+ },
+ {
+  "key": "fine",
+  "name": "Fine",
+  "short_name": "FINE",
+  "type": "int",
+  "min": -100,
+  "max": 100,
+  "step": 1,
+  "default": 0
+ },
+ {
+  "key": "velo",
+  "name": "Velocity",
+  "short_name": "VELO",
+  "type": "enum",
+  "options": [
+   "OFF",
+   "ON"
+  ],
+  "default": "OFF"
+ },
+ {
+  "key": "trig",
+  "name": "Trigger",
+  "short_name": "TRIG",
+  "type": "enum",
+  "options": [
+   "ON",
+   "OFF"
+  ],
+  "default": "ON"
+ },
+ {
+  "key": "root",
+  "name": "Root",
+  "short_name": "ROOT",
+  "type": "enum",
+  "options": [
+   "C",
+   "Db",
+   "D",
+   "Eb",
+   "E",
+   "F",
+   "Gb",
+   "G",
+   "Ab",
+   "A",
+   "Bb",
+   "B"
+  ],
+  "default": "C"
+ },
+ {
+  "key": "scale",
+  "name": "Scale",
+  "short_name": "SCALE",
+  "type": "enum",
+  "options": [
+   "Phrygian",
+   "Minor",
+   "Dorian",
+   "Major",
+   "Mixolyd",
+   "Lydian",
+   "Locrian",
+   "HarmMin",
+   "PhrygDom",
+   "MinPent",
+   "In",
+   "Chromatic"
+  ],
+  "default": "Phrygian"
+ },
+ {
+  "key": "steps",
+  "name": "Steps",
+  "short_name": "STEPS",
+  "type": "enum",
+  "options": [
+   "8",
+   "16"
+  ],
+  "default": "8"
+ }
+];
+export const ENGINE_NAMES = ["VAVCF", "PHDIS", "6OP1", "6OP2", "6OP3", "WTERR", "STRMC", "CHIP", "VA", "WSHAP", "FM", "GRAIN", "ADDIT", "WTBL", "CHORD", "SPEAK", "SWARM", "NOISE", "PARTI", "STRNG", "MODAL", "KICK", "SNARE", "HIHAT"];

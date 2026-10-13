@@ -1,0 +1,16 @@
+--- a/plaits/dsp/oscillator/sine_oscillator.h	2026-10-13 06:24:50.333784751 +0900
++++ b/plaits/dsp/oscillator/sine_oscillator.h	2026-10-13 06:24:50.335327535 +0900
+@@ -46,6 +46,13 @@
+ 
+ // Safe for phase >= 0.0f, will wrap.
+ inline float Sine(float phase) {
++  // oPlaits patch 0003: WaveTerrainEngine's AUX passes a negative phase
++  // (1 + 0.5 * kScale * aux_s < 0), which InterpolateWrap turns into a
++  // negative table index -- a read of up to 153 floats BEFORE lut_sine. A
++  // negative phase is wrapped into [0, 1] first; phase >= 0 is untouched.
++  if (phase < 0.0f) {
++    phase = phase - static_cast<float>(static_cast<int32_t>(phase)) + 1.0f;
++  }
+   return stmlib::InterpolateWrap(lut_sine, phase, kSineLUTSize);
+ }
+ 

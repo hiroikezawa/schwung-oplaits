@@ -1,0 +1,16 @@
+--- a/plaits/dsp/fm/dx_units.h	2026-10-13 06:22:29.231333632 +0900
++++ b/plaits/dsp/fm/dx_units.h	2026-10-13 06:22:29.232887891 +0900
+@@ -147,7 +147,12 @@
+ inline float NormalizeVelocity(float velocity) {
+   // float cube_root = stmlib::Sqrt(
+   //     0.7f * stmlib::Sqrt(velocity) + 0.3f * velocity);
+-  const float cube_root = stmlib::Interpolate(lut_cube_root, velocity, 16);
++  // oPlaits patch 0001: at velocity 1.0 Interpolate() would read
++  // lut_cube_root[17], one past the end, weighted by a fraction of exactly 0.
++  // Same value, without the out-of-bounds read.
++  const float cube_root = velocity >= 1.0f
++      ? lut_cube_root[16]
++      : stmlib::Interpolate(lut_cube_root, velocity, 16);
+   return 16.0f * (cube_root - 0.918f);
+ }
+ 
