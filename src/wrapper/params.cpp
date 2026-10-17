@@ -18,12 +18,12 @@ namespace oplaits {
 // FORMAT IS PARSED by scripts/metadata.py: one row per line, in this order.
 const ParamInfo kParams[P_COUNT] = {
   {"level",      PT_FLOAT,   0.0f,    1.0f,  0.5f},
-  {"engine",     PT_ENUM,    0.0f,   23.0f,  8.0f},
   {"harmonics",  PT_FLOAT,   0.0f,    1.0f,  0.5f},
   {"timbre",     PT_FLOAT,   0.0f,    1.0f,  0.5f},
-  {"morph",      PT_FLOAT,   0.0f,    1.0f,  0.5f},
   {"decay",      PT_FLOAT,   0.0f,    1.0f,  0.5f},
   {"colour",     PT_FLOAT,   0.0f,    1.0f,  0.0f},
+  {"morph",      PT_FLOAT,   0.0f,    1.0f,  0.5f},
+  {"engine",     PT_ENUM,    0.0f,   23.0f,  8.0f},
   {"pitch",      PT_INT,     0.0f,   60.0f, 14.0f},
   {"fm_amt",     PT_FLOAT,  -1.0f,    1.0f,  0.0f},
   {"timbre_amt", PT_FLOAT,  -1.0f,    1.0f,  0.0f},

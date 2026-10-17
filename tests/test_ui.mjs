@@ -105,7 +105,7 @@ ui.init();
 ticks(40);
 const c = ui.state.controller;
 check(JSON.stringify(c.page.keys.map(bare)) === JSON.stringify(MAIN_KEYS),
-      "page 1 = VOLUME ENGINE HARMONICS TIMBRE MORPH DECAY COLOR PITCH: " + c.page.keys);
+      "page 1 = VOLUME HARMONICS TIMBRE DECAY COLOR MORPH ENGINE PITCH: " + c.page.keys);
 check(c.pages.length >= 3, `Main / Plaits / Scale: ${c.pages.length} pages`);
 check(!reads.includes("ui_hierarchy"), "the grid must read grid_hierarchy, never the empty ui_hierarchy");
 check(fb.countLit() > 200, "page 1 draws");
@@ -115,16 +115,16 @@ check(ui.title() === "VA", "title = the engine (factory default VA): " + ui.titl
 /* ---- PITCH is a note of the scale: the DSP's names, by index ------------- */
 check(ui.state.names && ui.state.names.length === 36 && ui.state.names[14] === "C3", "names from the DSP");
 
-/* ---- ENGINE: knob 2 steps over the engines switched on ---------------------- */
+/* ---- ENGINE: knob 7 steps over the engines switched on ---------------------- */
 check(ui.state.vis.length === ENGINE_COUNT, "all 24 engines offered by default");
-for (let i = 0; i < 6; i++) { ui.onMidi([0xb0, 72, 1]); ticks(2); }
+for (let i = 0; i < 6; i++) { ui.onMidi([0xb0, 77, 1]); ticks(2); }
 ticks(10);
 check(writes.some(([k, v]) => k === "engine" && v === "9"), "ENGINE +1 writes the real index 9: " + writes.filter(([k]) => k === "engine"));
 
-/* ---- knobs 3..7 are HARMONICS TIMBRE MORPH DECAY COLOR ---------------------- */
+/* ---- knobs 2..6 are HARMONICS TIMBRE DECAY COLOR MORPH --------------------- */
 const wk = writes.length;
-const knobKeys = ["harmonics", "timbre", "morph", "decay", "colour"];
-for (let k = 0; k < 5; k++) { ui.onMidi([0xb0, 73 + k, 1]); ticks(10); }
+const knobKeys = ["harmonics", "timbre", "decay", "colour", "morph"];
+for (let k = 0; k < 5; k++) { ui.onMidi([0xb0, 72 + k, 1]); ticks(10); }
 for (const key of knobKeys)
     check(writes.slice(wk).some(([k2]) => k2 === key), `knob writes ${key}: ` + writes.slice(wk));
 
@@ -132,12 +132,12 @@ for (const key of knobKeys)
 status = "0,4,0,8,0";
 ticks(STATUS_EVERY_TICKS);
 check(/ 5\/8$/.test(ui.title()), "step in header: " + ui.title());
-ui.onMidi([0x90, 3, 127]);                            /* knob 4 touch = TIMBRE */
+ui.onMidi([0x90, 2, 127]);                            /* knob 3 touch = TIMBRE */
 check(touchesSent().at(-1) === "timbre,1", "touch reported: " + touchesSent());
 check(!/REC/.test(ui.title()), "no REC without the REC pad: " + ui.title());
-ui.onMidi([0x80, 3, 0]);
+ui.onMidi([0x80, 2, 0]);
 check(touchesSent().at(-1) === "timbre,0", "release reported");
-ui.onMidi([0x90, 1, 127]); ui.onMidi([0x80, 1, 0]);    /* knob 2 = ENGINE */
+ui.onMidi([0x90, 6, 127]); ui.onMidi([0x80, 6, 0]);    /* knob 7 = ENGINE */
 check(!touchesSent().some((t) => t.startsWith("engine")), "ENGINE is never recorded");
 
 /* ---- the pads ----------------------------------------------------------- */
@@ -157,13 +157,13 @@ ui.onMidi([0x80, 99, 0]);
 status = "0,4,0,8,1";
 ticks(STATUS_EVERY_TICKS);
 check(/ ARM 5\/8$/.test(ui.title()), "armed: " + ui.title());
-ui.onMidi([0x90, 3, 127]);
+ui.onMidi([0x90, 2, 127]);
 check(/ REC 5\/8$/.test(ui.title()), "REC under the finger at once: " + ui.title());
 const n0 = touchesSent().filter((t) => t === "timbre,1").length;
 ticks(Math.ceil(HEARTBEAT_MS * 4 / 17));
 const beats = touchesSent().filter((t) => t === "timbre,1").length - n0;
 check(beats >= 3 && beats <= 5, `heartbeat restates the touch (${beats} in ${HEARTBEAT_MS * 4} ms)`);
-ui.onMidi([0x80, 3, 0]);
+ui.onMidi([0x80, 2, 0]);
 const quiet = touchesSent().length;
 ticks(40);
 check(touchesSent().length === quiet, "no heartbeat once released");
@@ -206,9 +206,9 @@ check(reads.includes("eff_timbre"), "its playing value is read as eff_timbre");
 /* ---- Shift + touch clears one lane; on VOLUME, all ------------------------ */
 const before = touchesSent().length;
 hwShift = true;
-ui.onMidi([0x90, 3, 127]);
+ui.onMidi([0x90, 2, 127]);
 check(writes.at(-1)[0] === "motion_clear" && writes.at(-1)[1] === "timbre", "shift+touch clears the lane: " + writes.at(-1));
-ui.onMidi([0x80, 3, 0]);
+ui.onMidi([0x80, 2, 0]);
 ui.onMidi([0x90, 0, 127]);
 check(writes.at(-1)[0] === "motion_clear" && writes.at(-1)[1] === "all", "shift+touch VOLUME clears all");
 ui.onMidi([0x80, 0, 0]);
@@ -275,7 +275,7 @@ check(ui.handleBack() === true, "Back closes the list (consumed)");
 ticks(STATUS_EVERY_TICKS * 2);
 check(JSON.stringify(ui.state.vis) === "[3,20]", "the knob offers 6OP2 and MODAL: " + ui.state.vis);
 const mw = writes.filter(([k]) => k === "engine").length;
-for (let i = 0; i < 30; i++) ui.onMidi([0xb0, 72, 1]);     /* spin ENGINE up */
+for (let i = 0; i < 30; i++) ui.onMidi([0xb0, 77, 1]);     /* spin ENGINE up */
 ticks(10);
 const engineWrites = writes.filter(([k]) => k === "engine").slice(mw).map(([, v]) => v);
 check(engineWrites.length > 0 && engineWrites.every((v) => v === "3" || v === "20"),
@@ -303,7 +303,7 @@ check(writes.at(-1)[0] === "state" && values.engine === "20", "tap recalls the s
 check(PRESET_FIRST === 84, "presets on the second row");
 
 /* ---- the screen closes: pads, colours and touches go back ---------------- */
-ui.onMidi([0x90, 3, 127]);                           /* hold TIMBRE */
+ui.onMidi([0x90, 2, 127]);                           /* hold TIMBRE */
 shown = false;
 ticks(1);
 check(padBlocked === false, "pads handed back");

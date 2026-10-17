@@ -35,7 +35,7 @@ Emilie Gillet 氏が公開している公式ファームウェアの DSP ソー�
 
 ## エンジン一覧
 
-ENGINE ノブ（ノブ 2）の番号は、公式ファームウェアの `patch.engine` と同じです。
+ENGINE ノブ（ノブ 7）の番号は、公式ファームウェアの `patch.engine` と同じです。
 画面には短い名前が出ます。
 
 | 番号 | 画面 | 内容 | 実機のバンク |
@@ -149,9 +149,9 @@ Synth に **oPlaits** を選びます。
 
 | ノブ 1 | ノブ 2 | ノブ 3 | ノブ 4 |
 |---|---|---|---|
-| VOLUME | ENGINE（24 種） | HARMONICS | TIMBRE |
+| VOLUME | HARMONICS | TIMBRE | DECAY |
 | **ノブ 5** | **ノブ 6** | **ノブ 7** | **ノブ 8** |
-| MORPH | DECAY | COLOR | PITCH |
+| COLOR | MORPH | ENGINE（24 種） | PITCH |
 
 - **ENGINE** で音源の種類、**HARMONICS / TIMBRE / MORPH** で音色を作ります
   （実機の 3 つの大きなポット）。
@@ -243,7 +243,7 @@ AUX です（VOLUME・ENGINE・COARSE・FINE・VELO・TRIG と Scale ページ�
 
 | ページ | ノブ 1–8 |
 |---|---|
-| メイン | VOLUME・ENGINE・HARMONICS・TIMBRE・MORPH・DECAY・COLOR・PITCH |
+| メイン | VOLUME・HARMONICS・TIMBRE・DECAY・COLOR・MORPH・ENGINE・PITCH |
 | Plaits | FM>・TIMB>・MORPH>・AUX・COARSE・FINE・VELO・TRIG |
 | Scale | ROOT・SCALE・STEPS |
 | My Presets | プリセットの呼び出し・保存・削除（Schwung 共通） |
@@ -377,12 +377,12 @@ MIDI ファイルのどこが使われるか:
 | ページ | ノブ | 名前 | 範囲（既定） | 実機との対応 |
 |---|---|---|---|---|
 | メイン | 1 | VOLUME | 0–100 %（50 %） | 本モジュールの出力音量（実機にはない） |
-| | 2 | ENGINE | 0–23（8 = VA） | エンジン選択ボタン。番号は `patch.engine`、既定は工場出荷時の値 |
-| | 3 | HARMONICS | 0–100 %（50 %） | HARMONICS ポット |
-| | 4 | TIMBRE | 0–100 %（50 %） | TIMBRE ポット |
-| | 5 | MORPH | 0–100 %（50 %） | MORPH ポット |
-| | 6 | DECAY | 0–100 %（50 %） | LPG DECAY（MORPH のシフト機能）。既定は工場出荷時の値 |
-| | 7 | COLOR | 0–100 %（0 %） | LPG COLOUR（TIMBRE のシフト機能）。既定は工場出荷時の値 |
+| | 2 | HARMONICS | 0–100 %（50 %） | HARMONICS ポット |
+| | 3 | TIMBRE | 0–100 %（50 %） | TIMBRE ポット |
+| | 4 | DECAY | 0–100 %（50 %） | LPG DECAY（MORPH のシフト機能）。既定は工場出荷時の値 |
+| | 5 | COLOR | 0–100 %（0 %） | LPG COLOUR（TIMBRE のシフト機能）。既定は工場出荷時の値 |
+| | 6 | MORPH | 0–100 %（50 %） | MORPH ポット |
+| | 7 | ENGINE | 0–23（8 = VA） | エンジン選択ボタン。番号は `patch.engine`、既定は工場出荷時の値 |
 | | 8 | PITCH | スケールの音（C3） | 自動トリガーの音程（実機にはない） |
 | Plaits | 1 | FM> | -100–+100 %（0） | FM アッテヌバーター。FM に CV を挿していないときと同じく、内蔵ディケイ・エンベロープで音程を動かす量になる |
 | | 2 | TIMB> | -100–+100 %（0） | TIMBRE アッテヌバーター（内蔵エンベロープ → TIMBRE の量）。CHIP ではエンベロープの形 |

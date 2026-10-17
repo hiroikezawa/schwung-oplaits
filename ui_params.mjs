@@ -12,6 +12,61 @@ export const PARAMS = [
   "unit": "%"
  },
  {
+  "key": "harmonics",
+  "name": "Harmonics",
+  "short_name": "HARMO",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "timbre",
+  "name": "Timbre",
+  "short_name": "TIMBRE",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "decay",
+  "name": "LPG Decay",
+  "short_name": "DECAY",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
+  "key": "colour",
+  "name": "LPG Colour",
+  "short_name": "COLOR",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0,
+  "unit": "%"
+ },
+ {
+  "key": "morph",
+  "name": "Morph",
+  "short_name": "MORPH",
+  "type": "float",
+  "min": 0,
+  "max": 1,
+  "step": 0.01,
+  "default": 0.5,
+  "unit": "%"
+ },
+ {
   "key": "engine",
   "name": "Engine",
   "short_name": "ENGINE",
@@ -43,61 +98,6 @@ export const PARAMS = [
    "HIHAT"
   ],
   "default": "VA"
- },
- {
-  "key": "harmonics",
-  "name": "Harmonics",
-  "short_name": "HARMO",
-  "type": "float",
-  "min": 0,
-  "max": 1,
-  "step": 0.01,
-  "default": 0.5,
-  "unit": "%"
- },
- {
-  "key": "timbre",
-  "name": "Timbre",
-  "short_name": "TIMBRE",
-  "type": "float",
-  "min": 0,
-  "max": 1,
-  "step": 0.01,
-  "default": 0.5,
-  "unit": "%"
- },
- {
-  "key": "morph",
-  "name": "Morph",
-  "short_name": "MORPH",
-  "type": "float",
-  "min": 0,
-  "max": 1,
-  "step": 0.01,
-  "default": 0.5,
-  "unit": "%"
- },
- {
-  "key": "decay",
-  "name": "LPG Decay",
-  "short_name": "DECAY",
-  "type": "float",
-  "min": 0,
-  "max": 1,
-  "step": 0.01,
-  "default": 0.5,
-  "unit": "%"
- },
- {
-  "key": "colour",
-  "name": "LPG Colour",
-  "short_name": "COLOR",
-  "type": "float",
-  "min": 0,
-  "max": 1,
-  "step": 0.01,
-  "default": 0,
-  "unit": "%"
  },
  {
   "key": "pitch",

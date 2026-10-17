@@ -8,7 +8,7 @@
  * (page_controller.mjs) itself: the same grid, the same pages, plus the
  * knobs' touch sensors and the pads.
  *
- * Pages: main   VOLUME ENGINE HARMONICS TIMBRE MORPH DECAY COLOR PITCH
+ * Pages: main   VOLUME HARMONICS TIMBRE DECAY COLOR MORPH ENGINE PITCH
  *        Plaits FM> TIMB> MORPH> AUX COARSE FINE VELO TRIG
  *        Scale  ROOT SCALE STEPS
  *
@@ -51,7 +51,7 @@ import { ENGINE_NAMES } from './ui_params.mjs';
 /* Bit k of the DSP's masks = MOTION_KEYS[k] (motion.cpp's lane order). */
 export const MOTION_KEYS = ["harmonics", "timbre", "morph", "decay", "colour", "pitch",
                             "fm_amt", "timbre_amt", "morph_amt", "aux_mix"];
-export const MAIN_KEYS = ["level", "engine", "harmonics", "timbre", "morph", "decay", "colour", "pitch"];
+export const MAIN_KEYS = ["level", "harmonics", "timbre", "decay", "colour", "morph", "engine", "pitch"];
 
 export const STATUS_EVERY_TICKS = 6;     /* ~10 Hz: one IPC read costs ~2.8 ms */
 export const NAMES_EVERY_TICKS = 120;

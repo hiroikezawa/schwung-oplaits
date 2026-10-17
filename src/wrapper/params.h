@@ -21,13 +21,13 @@ struct ParamInfo {
 };
 
 // In the knob grid's page order (module.json's chain_params must match):
-//   main    VOLUME ENGINE HARMONICS TIMBRE MORPH DECAY COLOR PITCH
+//   main    VOLUME HARMONICS TIMBRE DECAY COLOR MORPH ENGINE PITCH
 //   Plaits  FM> TIMB> MORPH> AUX-MIX COARSE FINE VELO TRIG
 //   Scale   ROOT SCALE STEPS
 // Plaits' own controls use the hardware's own ranges: the panel pots 0..1,
 // the three attenuverters -1..+1, DECAY / LPG COLOUR 0..1.
 enum ParamId {
-  P_LEVEL, P_ENGINE, P_HARMONICS, P_TIMBRE, P_MORPH, P_DECAY, P_COLOUR, P_PITCH,
+  P_LEVEL, P_HARMONICS, P_TIMBRE, P_DECAY, P_COLOUR, P_MORPH, P_ENGINE, P_PITCH,
   P_FM_AMT, P_TIMBRE_AMT, P_MORPH_AMT, P_AUX_MIX, P_COARSE, P_FINE, P_VELO, P_TRIG,
   P_ROOT, P_SCALE, P_STEPS,
   P_COUNT

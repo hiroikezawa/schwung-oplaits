@@ -2,7 +2,7 @@
   "id": "oplaits",
   "name": "oPlaits",
   "abbrev": "oPLTS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plaits macro oscillator (the original DSP, all 24 engines, at the hardware's own rate) played on every 1/16 of Move's transport: 16 trigger pads, touch-recorded knob motion, a Phrase Gen RANDOM pad, preset pads and a PITCH knob set in the scale",
   "author": "Hiro Ikezawa",
   "api_version": 2,
@@ -21,6 +21,61 @@
         "key": "level",
         "name": "Volume",
         "short_name": "VOLUME",
+        "type": "float",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5,
+        "unit": "%"
+      },
+      {
+        "key": "harmonics",
+        "name": "Harmonics",
+        "short_name": "HARMO",
+        "type": "float",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5,
+        "unit": "%"
+      },
+      {
+        "key": "timbre",
+        "name": "Timbre",
+        "short_name": "TIMBRE",
+        "type": "float",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5,
+        "unit": "%"
+      },
+      {
+        "key": "decay",
+        "name": "LPG Decay",
+        "short_name": "DECAY",
+        "type": "float",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5,
+        "unit": "%"
+      },
+      {
+        "key": "colour",
+        "name": "LPG Colour",
+        "short_name": "COLOR",
+        "type": "float",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0,
+        "unit": "%"
+      },
+      {
+        "key": "morph",
+        "name": "Morph",
+        "short_name": "MORPH",
         "type": "float",
         "min": 0,
         "max": 1,
@@ -60,61 +115,6 @@
           "HIHAT"
         ],
         "default": "VA"
-      },
-      {
-        "key": "harmonics",
-        "name": "Harmonics",
-        "short_name": "HARMO",
-        "type": "float",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "default": 0.5,
-        "unit": "%"
-      },
-      {
-        "key": "timbre",
-        "name": "Timbre",
-        "short_name": "TIMBRE",
-        "type": "float",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "default": 0.5,
-        "unit": "%"
-      },
-      {
-        "key": "morph",
-        "name": "Morph",
-        "short_name": "MORPH",
-        "type": "float",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "default": 0.5,
-        "unit": "%"
-      },
-      {
-        "key": "decay",
-        "name": "LPG Decay",
-        "short_name": "DECAY",
-        "type": "float",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "default": 0.5,
-        "unit": "%"
-      },
-      {
-        "key": "colour",
-        "name": "LPG Colour",
-        "short_name": "COLOR",
-        "type": "float",
-        "min": 0,
-        "max": 1,
-        "step": 0.01,
-        "default": 0,
-        "unit": "%"
       },
       {
         "key": "pitch",
