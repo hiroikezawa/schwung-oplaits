@@ -2,7 +2,7 @@
   "id": "oplaits",
   "name": "oPlaits",
   "abbrev": "oPLTS",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Plaits macro oscillator (the original DSP, all 24 engines, at the hardware's own rate) played on every 1/16 of Move's transport: 16 trigger pads, touch-recorded knob motion, a Phrase Gen RANDOM pad, preset pads and a PITCH knob set in the scale",
   "author": "Hiro Ikezawa",
   "api_version": 2,

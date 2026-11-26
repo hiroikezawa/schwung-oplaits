@@ -1,0 +1,150 @@
+{
+  "title": "oPlaits",
+  "children": [
+    {
+      "title": "Idea",
+      "lines": [
+        "The Plaits macro",
+        "oscillator, played",
+        "from MIDI and an",
+        "auto 1/16 sequence.",
+        "All 24 engines. The",
+        "DSP is the original",
+        "open-source Plaits",
+        "code."
+      ]
+    },
+    {
+      "title": "Playing",
+      "lines": [
+        "Press Play on Move:",
+        "a note on every 1/16",
+        "whose step pad is on,",
+        "at PITCH.",
+        "Stopped = silent.",
+        "MIDI notes from a",
+        "Move track play too,",
+        "at their own pitch."
+      ]
+    },
+    {
+      "title": "Main page",
+      "lines": [
+        "1 VOLUME",
+        "2 HARMO  harmonics",
+        "3 TIMBRE",
+        "4 DECAY  LPG decay",
+        "5 COLOR  LPG colour",
+        "6 MORPH",
+        "7 ENGINE 24 engines",
+        "8 PITCH note of the",
+        "        scale"
+      ]
+    },
+    {
+      "title": "Plaits page",
+      "lines": [
+        "1 FM>    env to FM",
+        "2 TIMB>  to TIMBRE",
+        "3 MORPH> to MORPH",
+        "4 AUX    OUT/AUX mix",
+        "5 COARSE semitones",
+        "6 FINE   cents",
+        "7 VELO   velocity",
+        "        sets level",
+        "8 TRIG   trigger on",
+        "        or free-run"
+      ]
+    },
+    {
+      "title": "Engine notes",
+      "lines": [
+        "CHIP: TIMB> at centre",
+        "never decays.",
+        "6OP: length is the",
+        "patch's own.",
+        "KICK SNARE HIHAT",
+        "STRNG MODAL: length",
+        "is their own, not",
+        "DECAY."
+      ]
+    },
+    {
+      "title": "Pads",
+      "lines": [
+        "While this screen is",
+        "up the pads are",
+        "oPlaits's:",
+        "Top right: REC,",
+        "  RANDOM, ENGINES.",
+        "Row 2: presets 1-8.",
+        "Bottom 2 rows: the",
+        "  16 steps on/off.",
+        "  White = playing."
+      ]
+    },
+    {
+      "title": "REC motion",
+      "lines": [
+        "REC on + Move",
+        "playing: touch a",
+        "knob and turn it to",
+        "record its move.",
+        "Shift+touch: clear",
+        "that knob.",
+        "Shift+touch VOLUME:",
+        "clear all.",
+        "Recorded: HARMO,",
+        "TIMBRE, MORPH, DECAY,",
+        "COLOR, PITCH, FM>,",
+        "TIMB>, MORPH>, AUX."
+      ]
+    },
+    {
+      "title": "RANDOM",
+      "lines": [
+        "Writes a new melody",
+        "into PITCH, one note",
+        "per step, all in",
+        "ROOT + SCALE, around",
+        "the PITCH knob's",
+        "note. Press again",
+        "for another.",
+        "Shift+touch PITCH",
+        "clears it."
+      ]
+    },
+    {
+      "title": "Presets",
+      "lines": [
+        "Row 2 pads:",
+        "tap = recall,",
+        "Shift+tap = save.",
+        "Saves knobs, motion,",
+        "steps and scale.",
+        "Dark = empty,",
+        "dim = saved,",
+        "white = current."
+      ]
+    },
+    {
+      "title": "ENGINES list",
+      "lines": [
+        "Pad ENGINES opens it.",
+        "Jog: move, click:",
+        "on/off. The ENGINE",
+        "knob offers only the",
+        "engines that are on.",
+        "Back closes."
+      ]
+    },
+    {
+      "title": "Scale page",
+      "lines": [
+        "1 ROOT  of PITCH",
+        "2 SCALE of PITCH",
+        "3 STEPS loop 8/16"
+      ]
+    }
+  ]
+}
